@@ -20,7 +20,7 @@ Resources:
     Properties: 
       FunctionName: 
         Fn::GetAtt: 
-          - "BetaStack-HelloWorldFunction-LNQ1ATL8KGK6"
+          - "HelloWorldFunction"
           - "Arn"
       Action: "lambda:InvokeFunction"
       Principal: "apigateway.amazonaws.com"
