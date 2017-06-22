@@ -16,12 +16,12 @@ Resources:
             Path: /
             Method: ANY
   LambdaInvokePermission: 
-  Type: "AWS::Lambda::Permission"
-  Properties: 
-    FunctionName: 
-      Fn::GetAtt: 
-        - "BetaStack-HelloWorldFunction-LNQ1ATL8KGK6"
-        - "Arn"
-    Action: "lambda:InvokeFunction"
-    Principal: "apigateway.amazonaws.com"
-    SourceArn: "arn:aws:execute-api:us-west-2:158233330829:4yciq5ezb0/Prod/ANY/"
+    Type: "AWS::Lambda::Permission"
+    Properties: 
+      FunctionName: 
+        Fn::GetAtt: 
+          - "BetaStack-HelloWorldFunction-LNQ1ATL8KGK6"
+          - "Arn"
+      Action: "lambda:InvokeFunction"
+      Principal: "apigateway.amazonaws.com"
+      SourceArn: "arn:aws:execute-api:us-west-2:158233330829:4yciq5ezb0/Prod/ANY/"
