@@ -15,12 +15,34 @@ Resources:
           Properties:
             Path: /
             Method: ANY
+  BranchFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.branch_handler
+      Runtime: python3.6
+      CodeUri: ./
+      Events:
+        HelloWorldApi:
+          Type: Api
+          Properties:
+            Path: /foo
+            Method: ANY
   LambdaInvokePermission: 
     Type: "AWS::Lambda::Permission"
     Properties: 
       FunctionName: 
         Fn::GetAtt: 
           - "HelloWorldFunction"
+          - "Arn"
+      Action: "lambda:InvokeFunction"
+      Principal: "apigateway.amazonaws.com"
+      SourceArn: "arn:aws:execute-api:us-west-2:158233330829:4yciq5ezb0/*/*/"
+  LambdaInvokeBranchPermission: 
+    Type: "AWS::Lambda::Permission"
+    Properties: 
+      FunctionName: 
+        Fn::GetAtt: 
+          - "BranchFunction"
           - "Arn"
       Action: "lambda:InvokeFunction"
       Principal: "apigateway.amazonaws.com"

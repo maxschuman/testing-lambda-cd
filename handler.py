@@ -5,3 +5,10 @@ def handler(event, context):
 	    "headers": {},
 	    "body": "Hello, world!"
     }
+
+def branch_handler(event, context):
+	return {
+		"statusCode": 200,
+		"headers": {},
+		"body": "bar"
+	}
