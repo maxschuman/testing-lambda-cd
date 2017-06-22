@@ -24,4 +24,4 @@ Resources:
           - "Arn"
       Action: "lambda:InvokeFunction"
       Principal: "apigateway.amazonaws.com"
-      SourceArn: "arn:aws:execute-api:us-west-2:158233330829:4yciq5ezb0/Prod/ANY/"
+      SourceArn: "arn:aws:execute-api:us-west-2:158233330829:4yciq5ezb0/*/*/"
